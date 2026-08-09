@@ -12,7 +12,13 @@ import Loader from '../Loader'
         camera={{ near: 0.2, far:1000 }}
         >
             <Suspense fallback={<Loader />}>
-                
+
+                <directionalLight/>
+                <ambientLight />
+                <pointLight />
+                <spotLight />
+                <hemisphereLight />
+            
             </Suspense>
         </Canvas>
     </section>
