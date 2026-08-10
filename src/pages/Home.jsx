@@ -4,13 +4,15 @@ import Loader from '../components/Loader'
 
 import Island from '../models/Island';
 
-{/*<div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        </div>*/}
+/*
+<div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+</div>
+*/
 
         const Home = () => {
 
             const adjustIslandForScreenSize = () => {
-                let screenScale = null ;
+                let screenScale ;
                 // eslint-disable-next-line no-useless-assignment
                 let screenPosition = [0, -6.5, -43];
                 let rotation = [0.1, 4.7, 0];

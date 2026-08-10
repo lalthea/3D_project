@@ -13,14 +13,14 @@ import { a } from '@react-spring/three';
 
 import islandScene from '../assets/3d/island.glb';
 
-const island = (props) => {
+const Island = (props) => {
 
     const islandRef = useRef();
   
     const { nodes, materials } = useGLTF(islandScene);
   
     return (
-    <a.group ref ={islandRef}{...props}>
+    <a.group ref={islandRef} {...props}>
       <mesh
         geometry={nodes.polySurface944_tree_body_0.geometry}
         material={materials.PaletteMaterial001}
@@ -53,4 +53,4 @@ const island = (props) => {
   )
 }
 
-export default island;
+export default Island;
