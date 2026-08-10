@@ -2,7 +2,7 @@ import {Suspense} from 'react'
 import {Canvas} from "@react-three/fiber";
 import Loader from '../components/Loader'
 
-import {Island} from '../models/Island';
+import Island from '../models/Island';
 
 {/*<div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
         </div>*/}
@@ -10,7 +10,8 @@ import {Island} from '../models/Island';
         const Home = () => {
 
             const adjustIslandForScreenSize = () => {
-                let screenScale = null;
+                let screenScale = null ;
+                // eslint-disable-next-line no-useless-assignment
                 let screenPosition = [0, -6.5, -43];
                 let rotation = [0.1, 4.7, 0];
 
@@ -27,7 +28,7 @@ import {Island} from '../models/Island';
             }
 
 
-            const [ islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize();
+            const [islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize();
 
     return (
     <section className="w-full h-screen relatives">
@@ -37,11 +38,13 @@ import {Island} from '../models/Island';
         >
             <Suspense fallback={<Loader />}>
 
-                <directionalLight/>
-                <ambientLight />
-                <pointLight />
-                <spotLight />
-                <hemisphereLight />
+                <directionalLight position={[1, 1, 1]} intensity={2} />
+                <ambientLight intensity={0.5} />
+                <hemisphereLight 
+                    skyColor="#b1e1ff" 
+                    groundColor="#8B4513" 
+                    intensity={1} 
+                />
 
                 <Island 
                     position={islandPosition}
